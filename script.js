@@ -1,5 +1,5 @@
 // ========== WORD LISTS ==========
-const EasyWords = [
+const primaryWords = [
   { word: "apple", meaning: "A round fruit that grows on trees", example: "I ate a red apple for lunch." },
   { word: "school", meaning: "A place where children go to learn", example: "We go to school every weekday." },
   { word: "friend", meaning: "A person you like and trust", example: "My best friend lives next door." },
@@ -22,7 +22,7 @@ const EasyWords = [
   { word: "dragon", meaning: "A large imaginary creature that breathes fire", example: "The story was about a friendly dragon." }
 ];
 
-const HardWords = [
+const secondaryWords = [
   { word: "necessary", meaning: "Needed or required", example: "It is necessary to study for the test." },
   { word: "accommodation", meaning: "A place to stay or live", example: "We booked accommodation near the beach." },
   { word: "definitely", meaning: "Without any doubt", example: "I will definitely come to the party." },
