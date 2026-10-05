@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpellQuest</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Start Screen -->
+    <div id="start-screen" class="screen active">
+      <h1>Spell<span>Quest</span></h1>
+      <p class="tagline">Master spelling through fun challenges!</p>
+
+      <div class="mode-select">
+        <button class="mode-btn" data-mode="Beginner">
+          <span class="mode-icon">🌱</span>
+          <strong>Beginner</strong>
+          <small>Playing for the first time</small>
+        </button>
+        <button class="mode-btn" data-mode="Professional">
+          <span class="mode-icon">🚀</span>
+          <strong>Professional</strong>
+          <small>Frequent Player</small>
+        </button>
+      </div>
+
+      <button id="how-to-play-btn" class="secondary-btn">How to Play</button>
+    </div>
+
+    <!-- How to Play Modal -->
+    <div id="how-to-play" class="modal hidden">
+      <div class="modal-content">
+        <h2>How to Play</h2>
+        <ol>
+          <li>Choose Beginner or Professional mode</li>
+          <li>Look at the scrambled letters</li>
+          <li>Type the correct spelling of the word</li>
+          <li>Press Enter or click Check</li>
+          <li>Earn points, build streaks & level up!</li>
+        </ol>
+        <p>You have 3 lives. Reach the goal score to complete the level.</p>
+        <button id="close-how-to" class="primary-btn">Got it!</button>
+      </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen">
+      <header class="game-header">
+        <div class="stat">
+          <span class="label">Score</span>
+          <span id="score">0</span>
+        </div>
+        <div class="stat">
+          <span class="label">Level</span>
+          <span id="level">1</span>
+        </div>
+        <div class="stat">
+          <span class="label">Streak</span>
+          <span id="streak">0</span>
+        </div>
+        <div class="lives" id="lives">❤️❤️❤️</div>
+      </header>
+
+      <div class="progress-container">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <div class="game-area">
+        <p class="instruction">Unscramble the letters and type the word:</p>
+        <div id="scrambled" class="scrambled-word"></div>
+
+        <input type="text" id="answer-input" placeholder="Type the word here..." autocomplete="off" spellcheck="false">
+
+        <div class="buttons">
+          <button id="check-btn" class="primary-btn">Check</button>
+          <button id="skip-btn" class="secondary-btn">Skip (−1 life)</button>
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+      </div>
+
+      <div id="word-info" class="word-info hidden">
+        <p><strong>Meaning:</strong> <span id="meaning"></span></p>
+        <p><strong>Example:</strong> <span id="example"></span></p>
+      </div>
+    </div>
+
+    <!-- Level Complete Screen -->
+    <div id="level-complete" class="screen">
+      <h2>Level Complete! 🎉</h2>
+      <p>You scored <span id="final-score">0</span> points!</p>
+      <div class="stars" id="stars">⭐⭐⭐</div>
+      <button id="next-level-btn" class="primary-btn">Next Level</button>
+      <button id="menu-btn" class="secondary-btn">Main Menu</button>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="game-over" class="screen">
+      <h2>Game Over</h2>
+      <p>Final Score: <span id="game-over-score">0</span></p>
+      <p>Best Streak: <span id="best-streak">0</span></p>
+      <button id="play-again-btn" class="primary-btn">Play Again</button>
+      <button id="menu-btn-2" class="secondary-btn">Main Menu</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
