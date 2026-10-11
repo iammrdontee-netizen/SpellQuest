@@ -111,6 +111,35 @@ const streakEl = document.getElementById("streak");
 const livesEl = document.getElementById("lives");
 const progressBar = document.getElementById("progress-bar");
 
+// ========== Dark Mode ==========
+const themeToggle = document.getElementById("theme-toggle");
+const themeToggleGame = document.getElementById("theme-toggle-game");
+
+function setTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("spellquest-theme", theme);
+
+  // Update icons
+  const icon = theme === "dark" ? "☀️" : "🌙";
+  document.querySelectorAll(".theme-icon").forEach(el => {
+    el.textContent = icon;
+  });
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute("data-theme");
+  const next = current === "dark" ? "light" : "dark";
+  setTheme(next);
+}
+
+// Load saved theme on start
+const savedTheme = localStorage.getItem("spellquest-theme") || "light";
+setTheme(savedTheme);
+
+// Event listeners
+if (themeToggle) themeToggle.addEventListener("click", toggleTheme);
+if (themeToggleGame) themeToggleGame.addEventListener("click", toggleTheme);
+
 // ========== HELPERS ==========
 function scramble(word) {
   const arr = word.split("");
