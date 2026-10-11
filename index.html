@@ -15,8 +15,13 @@
 </head>
 <body>
   <div class="app">
-    <!-- Start Screen -->
+
+    <!-- ========== START SCREEN ========== -->
     <div id="start-screen" class="screen active">
+      <button id="theme-toggle" class="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+
       <div class="logo">✨</div>
       <h1>Spell<span>Quest</span></h1>
       <p class="tagline">Master spelling through fun challenges!</p>
@@ -37,7 +42,7 @@
       <button id="how-to-play-btn" class="secondary-btn">How to Play</button>
     </div>
 
-    <!-- How to Play Modal -->
+    <!-- ========== HOW TO PLAY MODAL ========== -->
     <div id="how-to-play" class="modal hidden">
       <div class="modal-content">
         <h2>How to Play</h2>
@@ -53,51 +58,54 @@
       </div>
     </div>
 
-   <!-- Game Screen -->
-<div id="game-screen" class="screen">
-  <header class="game-header">
-    <div class="stat">
-      <span class="label">Score</span>
-      <span id="score">0</span>
+    <!-- ========== GAME SCREEN ========== -->
+    <div id="game-screen" class="screen">
+      <header class="game-header">
+        <div class="stat">
+          <span class="label">Score</span>
+          <span id="score">0</span>
+        </div>
+        <div class="stat">
+          <span class="label">Level</span>
+          <span id="level">1</span>
+        </div>
+        <div class="stat">
+          <span class="label">Streak</span>
+          <span id="streak">0</span>
+        </div>
+        <div class="lives" id="lives">❤️❤️❤️</div>
+
+        <button id="theme-toggle-game" class="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </header>
+
+      <div class="progress-container">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <div class="game-area">
+        <p class="instruction">Unscramble the letters</p>
+        
+        <div id="scrambled" class="scrambled-tiles"></div>
+
+        <input type="text" id="answer-input" placeholder="Type the word..." autocomplete="off" spellcheck="false">
+
+        <div class="buttons">
+          <button id="check-btn" class="primary-btn">✓ Check</button>
+          <button id="skip-btn" class="secondary-btn">Skip</button>
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+      </div>
+
+      <div id="word-info" class="word-info hidden">
+        <p><strong>Meaning:</strong> <span id="meaning"></span></p>
+        <p><strong>Example:</strong> <span id="example"></span></p>
+      </div>
     </div>
-    <div class="stat">
-      <span class="label">Level</span>
-      <span id="level">1</span>
-    </div>
-    <div class="stat">
-      <span class="label">Streak</span>
-      <span id="streak">0</span>
-    </div>
-    <div class="lives" id="lives">❤️❤️❤️</div>
-  </header>
 
-  <div class="progress-container">
-    <div id="progress-bar" class="progress-bar"></div>
-  </div>
-
-  <div class="game-area">
-    <p class="instruction">Unscramble the letters</p>
-    
-    <!-- Letter tiles will be generated here by JavaScript -->
-    <div id="scrambled" class="scrambled-tiles"></div>
-
-    <input type="text" id="answer-input" placeholder="Type the word..." autocomplete="off" spellcheck="false">
-
-    <div class="buttons">
-      <button id="check-btn" class="primary-btn">✓ Check</button>
-      <button id="skip-btn" class="secondary-btn">Skip</button>
-    </div>
-
-    <div id="feedback" class="feedback"></div>
-  </div>
-
-  <div id="word-info" class="word-info hidden">
-    <p><strong>Meaning:</strong> <span id="meaning"></span></p>
-    <p><strong>Example:</strong> <span id="example"></span></p>
-  </div>
-</div>
-
-    <!-- Level Complete Screen -->
+    <!-- ========== LEVEL COMPLETE ========== -->
     <div id="level-complete" class="screen">
       <div class="celebrate">🎉</div>
       <h2>Level Complete!</h2>
@@ -107,7 +115,7 @@
       <button id="menu-btn" class="secondary-btn">Main Menu</button>
     </div>
 
-    <!-- Game Over Screen -->
+    <!-- ========== GAME OVER ========== -->
     <div id="game-over" class="screen">
       <div class="celebrate">😢</div>
       <h2>Game Over</h2>
@@ -116,6 +124,7 @@
       <button id="play-again-btn" class="primary-btn">Play Again</button>
       <button id="menu-btn-2" class="secondary-btn">Main Menu</button>
     </div>
+
   </div>
 
   <script src="script.js"></script>
